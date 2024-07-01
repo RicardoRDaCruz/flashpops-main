@@ -1,0 +1,46 @@
+{% extends 'base.html' %}<
+{% load static %}
+    {% block content %}
+    
+    <div style="background-color: #ff9248;">        
+        <div class=divmusicas id=divmusicas_{{quantidade}} style="margin-left: 200px; margin-right: 200px; margin-top: 88px; border: solid; border-color: #ffffff;">
+            <div style="text-align: center; padding-top: 30px; color: #ffffff;">
+                <h1 style="font-weight: bold; font-family: Cursive;">FLASHPOPS 2</h1>                    
+            </div>
+            <div style="text-align: center; padding-top: 30px; color: #ffffff;">
+                <h4>Atenção! Basta digitar o nome correto do filme nos campos para contabilizar 1 acerto. Não se preocupe com acentos, artigos, hífens e letras maiúsculas</h4>                    
+            </div>
+            <div style="text-align: center; padding-top: 10px; color: #ffffff;">
+                <h5>Exemplo: Nos caso do filme 'Os Sem-Floresta', 'sem floresta' é conseiderada uma resposta certa </h5>                    
+            </div>
+            <div style="text-align: center; padding-top: 30px; color: #ffffff;">
+                <h1 style="font-weight: bold; border: solid; border-radius: 20px;" id="acertos">Acertos: 0 / {{quantidade}} (0 %)</h1>                    
+            </div>
+            <div class="row justify-content-center align-self-center" style="background-image: url('{% static 'img/music.png'%}');">                                     
+                {% for item in musicas %}
+                <div class="col-sm" id=caixa{{item.posicao}} style="max-width:250px;max-height:300px;margin:1rem;padding:1rem;border: solid; border-radius: 20px; margin: 50px; background-color: #ffffff;">
+                    <h1 class="text-center">{{item.posicao}}</h1>
+                    <div class="row justify-content-center align-self-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" id=botao-restart{{item.posicao}} width="48" height="48" fill="currentColor" class="bi bi-skip-start" viewBox="0 0 16 16">
+                            <path d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.52-.302 1.233.043 1.233.696v7.384c0 .653-.713.998-1.233.696L5 8.752V12a.5.5 0 0 1-1 0V4zm7.5.633L5.696 8l5.804 3.367V4.633z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" id=botao-play{{item.posicao}} width="48" height="48" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16">
+                            <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" id=botao-pause{{item.posicao}} width="48" height="48" fill="currentColor" class="bi bi-pause" viewBox="0 0 16 16">
+                            <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"/>
+                        </svg>               
+                        <audio id="audio{{item.posicao}}" src={{item.file.url}}></audio>
+                    </div>  
+                    <div class="row justify-content-center align-self-center">
+                        <input class=txt{{item.posicao}} id=txt{{item.posicao}} name="{{item.filme}}_{{item.nomes_alternativos}}" type="text">          
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>    
+
+    {% endblock %}
+
+

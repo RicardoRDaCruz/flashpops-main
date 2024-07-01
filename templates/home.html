@@ -1,0 +1,50 @@
+{% extends 'base.html' %}<
+{% load static %}
+    {% block content %}
+    
+    
+    <div style="background-color: #808080;">
+        <div class=divmusicas style="margin-left: 200px; margin-right: 200px; margin-top: 88px;padding-bottom: 170px; border: solid; border-color: #ffffff;">
+            <div style="text-align: center; padding-top: 30px; color: #ffffff;">
+                <h1 style="font-weight: bold; font-family: Cursive;">FLASHPOPS</h1>                    
+            </div>
+            <div style="text-align: center; padding-top: 30px; color: #ffffff;">
+                <h5>Este site é uma recriação dos jogos de adivinhar músicas de filmes, do site Flashpops original, disponíveis como jogos de flash no site http://flashpops.com.br/cinema/</h5>                    
+            </div>
+            <div style="text-align: center; padding-top: 10px; color: #ffffff;">
+                <h5>Com o fim do suporte da Adobe ao flashplayer, esses jogos se tornaram mais difíceis de executar em navegadores</h5>                    
+            </div>
+            <div style="text-align: center; padding-top: 10px; color: #ffffff;">
+                <h5>Além disso, o próprio site do flashpops anuncia, em sua página inicial, que prevê o fim de seu domínio</h5>                    
+            </div>
+            <div style="text-align: center; padding-top: 10px; color: #ffffff;">
+                <h5>Pensando nisso, recriamos o sistema do Flashpops com as mesmas músicas dos jogos originais, além de acrescentar um jogo novo, o Flashpops 4</h5>                    
+            </div>            
+            <div class="row justify-content-center align-self-center">
+                <a href="{% url 'flashpops_um'%}">               
+                <div class="col-sm" style="max-width:280px;max-height:300px;margin:1rem;padding:1rem;border: solid; border-radius: 20px;border-width: 0.5em; margin: 50px; background-color: #ffffff;">
+                    <h1 class="text-center">Flashpops 1</h1>                    
+                </div>
+                </a>
+                <a href="{% url 'flashpops_dois'%}">
+                <div class="col-sm" style="max-width:280px;max-height:300px;margin:1rem;padding:1rem;border: solid; border-radius: 20px;border-width: 0.5em; margin: 50px; background-color: #ffffff;">
+                    <h1 class="text-center">Flashpops 2</h1>                    
+                </div>
+                </a>
+                <a href="{% url 'flashpops_tres'%}">
+                <div class="col-sm" style="max-width:280px;max-height:300px;margin:1rem;padding:1rem;border: solid; border-radius: 20px;border-width: 0.5em; margin: 50px; background-color: #ffffff;">
+                    <h1 class="text-center">Flashpops 3</h1>                    
+                </div>
+                </a>
+                <a href="{% url 'flashpops_quatro'%}">
+                <div class="col-sm" style="max-width:280px;max-height:300px;margin:1rem;padding:1rem;border: solid; border-radius: 20px;border-width: 0.5em; margin: 50px; background-color: #ffffff;">
+                    <h1 class="text-center">Flashpops 4</h1>                    
+                </div>
+                </a>                
+            </div>
+        </div>
+    </div>    
+
+    {% endblock %}
+
+
